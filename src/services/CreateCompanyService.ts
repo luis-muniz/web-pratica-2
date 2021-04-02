@@ -4,10 +4,14 @@ import CompaniesRepository from '../repositories/CompaniesRepository';
 import ICreateCompanyDTO from '../dtos/ICreateCompanyDTO';
 
 class CreateCompanyService {
-  public async execute({ name }: ICreateCompanyDTO): Promise<Company> {
+  public async execute({
+    name,
+    description,
+    url,
+  }: ICreateCompanyDTO): Promise<Company> {
     const companiesRespository = getCustomRepository(CompaniesRepository);
 
-    const company = companiesRespository.create({ name });
+    const company = companiesRespository.create({ name, description, url });
 
     await companiesRespository.save(company);
 

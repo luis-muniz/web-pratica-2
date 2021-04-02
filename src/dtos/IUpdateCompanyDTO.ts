@@ -1,5 +1,7 @@
 export interface IData {
   name: string;
+  url: string;
+  description: string;
 }
 
 interface IUpdateCompanyDTO {

@@ -9,11 +9,15 @@ import UpdateCompanyService from '../services/UpdateCompanyService';
 class CompaniesController implements IController {
   public async store(request: Request, response: Response): Promise<Response> {
     try {
-      const { name } = request.body;
+      const { name, url, description } = request.body;
 
       const createCompanyService = new CreateCompanyService();
 
-      const company = await createCompanyService.execute({ name });
+      const company = await createCompanyService.execute({
+        name,
+        url,
+        description,
+      });
 
       return response.json(company);
     } catch (error) {

@@ -26,6 +26,8 @@ class UpdateCompanyService {
   private isValidData(data: IData): boolean {
     const compareData: IData = {
       name: 'compare',
+      url: 'compare',
+      description: 'compare',
     };
 
     const propsCompare = Object.keys(compareData);

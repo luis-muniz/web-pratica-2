@@ -16,6 +16,12 @@ class Company {
   @Column()
   name: string;
 
+  @Column()
+  description: string;
+
+  @Column()
+  url: string;
+
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
